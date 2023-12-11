@@ -1,0 +1,62 @@
+//------------------------------ROUTES------------------------------------//
+
+// GET API Call route handler
+//* app.get('/api/v1/tours', getAllTours);
+
+//* app.post('/api/v1/tours', getTour);
+
+// GET API call with a variable route
+// use the ":" and then the name of the variable needed to be passed
+// anything after ":" called params (paramters)
+// after the ":" is a MUST to be added
+// while "?" is optional paramter way of using => (:id?)
+//* app.get('/api/v1/tours/:id', createTour);
+
+// uses PATCH API Call that updates the database with only the new values
+//* app.patch('/api/v1/tours/:id', updateTour);
+
+//* app.delete('/api/v1/tours/:id', deleteTour);
+
+//--------------------------------------------------------------------------------//
+
+// get Route (API Call GET) called when the front-end requests a GET call
+// first paramter for the EndPoint
+// app.get('/', (request, response) => {
+//     // return 200 OK as the status as seen by postman
+//     // return a response to the front-end
+//     // response.status(200).send('Hello from Server');
+
+//     //! now we send a JSON Object
+
+//     response.status(200).json({
+//         message: 'hi now from JSON',
+//         app: 'SSS',
+//     });
+// });
+
+// app.post('/', (request, response) => {
+//     response.status(200).json({
+//         message: 'this endpoint now supports post',
+//         app: 'SSS',
+//     });
+// })
+
+//---------------------------------------------------------------------//
+// creating a custom middleware
+// normal requset, response, the next function that moves through the middleware stack
+// this middleware is applied to all API Methods as we didnt specify any routes to it
+// to make it invisible to some routes just change the place of this function
+// to be under the routes we need to make it invisible to
+// app.use((req, res, next) => {
+//   console.log('heellooo middleware :)');
+//   // calling the next function is verry important in order not to be stuck
+//   // as the next helps in moving through the middleware
+//   // not using the next causes freeze like behaviour while sending the request
+//   next();
+// });
+
+//--------------------------------------------------------------------------//
+//app.use((req, res, next) => {
+    //   req.requestTime = new Date().toISOString();
+    //   next();
+    // });
